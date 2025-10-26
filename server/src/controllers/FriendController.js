@@ -80,7 +80,7 @@ export const unfriend = async (req, res) => {
   }
 };
 
-export const listFriend = async (req, res) => {
+export const listFriends = async (req, res) => {
   try {
     const me = await User.findById(req.user.id).populate(
       "friends",

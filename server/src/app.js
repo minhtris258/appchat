@@ -5,6 +5,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 
 import UserRouter from "./routes/UserRoutes.js";
+import FriendRouter from "./routes/FriendRoutes.js";
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.get("/health/db", (_req, res) => {
 app.get("/", (_req, res) => res.send("API is ready"));
 
 app.use("/api/users", UserRouter);
+app.use("/api/friends", FriendRouter);
 
 app.use((_req, res) => res.status(404).json({ message: "Endpoint not found" }));
 
